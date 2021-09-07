@@ -1,12 +1,13 @@
 import * as React from "react";
 import Main from "../pages/Main";
-import Signup from "../pages/Signup";
-import Signin from "../pages/Signin";
 
-const App = () => {
+const App: React.FC = () => {
+  const onClick = (title: string) => {
+    console.log(`${title} 페이지 입니다!`);
+  };
   return (
     <>
-      <Main />
+      <Main onClick={onClick} />
     </>
   );
 };

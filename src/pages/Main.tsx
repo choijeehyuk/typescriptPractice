@@ -1,11 +1,22 @@
 import * as React from "react";
 
-const Main = () => {
+type MainProps = {
+  title: string;
+  onClick: (title: string) => void;
+};
+
+const Main = ({ title, onClick }: MainProps) => {
+  const click = () => onClick(title);
   return (
     <>
-      <h1>메인 입니다!</h1>
+      <h1>{title}</h1>
+      <button onClick={click}>dd</button>
     </>
   );
+};
+
+Main.defaultProps = {
+  title: "메인입니다!",
 };
 
 export default Main;
